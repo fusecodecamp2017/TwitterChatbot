@@ -18,7 +18,7 @@ def get_last_x_mentions(num)
 end
 
 def has_prompt?(tweet)
-  tweet.include?('ask me')
+  tweet.include?('what is') || tweet.include?('when is')
 end
 
 while true
@@ -27,15 +27,16 @@ while true
     id = mention.id
     next if !has_prompt?(txt) || @responded.include?(id)
 
+    reply = ''
     case txt
       when /name/
-        reply = 'what is your name?'
+        reply = 'My name is Inigo Montoya. You killed my father. Prepare to die.'
       when /age/
-        reply = 'what is your age?'
+        reply = '11010'
       when /hobby/
-        reply = 'what is your favorite hobby?'
-      when /birthday/
-        reply = 'when is your birthday?'
+        reply = 'I enjoy the occasional round of disc golf'
+      when /snack/
+        reply = "Don't be ridiculous. It's Dunkaroos, everybody knows that."
     end
 
     next if reply == ''
