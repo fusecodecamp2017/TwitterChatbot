@@ -18,24 +18,28 @@ def get_last_x_mentions(num)
 end
 
 def has_prompt?(tweet)
-  tweet.include?('ask me')
+  tweet.downcase.include?('what is') || tweet.include?('when is')
 end
 
 while true
   get_last_x_mentions(20).each do |mention|
     txt = mention.text
     id = mention.id
-    next if !has_prompt?(txt) || @responded.include?(id)
+    next if @responded.include?(id)
 
-    case txt
-      when /name/
-        reply = 'what is your name?'
-      when /age/
-        reply = 'what is your age?'
-      when /hobby/
-        reply = 'what is your favorite hobby?'
-      when /birthday/
-        reply = 'when is your birthday?'
+    reply = ''
+    if (txt.include?("hi there"))
+      reply = "oh, hello! How are you?"
+    elsif (txt.include?("How are you?"))
+      reply = "I'm doing well, thanks. What are you up to?"
+    elsif (txt.include?("What are you up to?"))
+      reply = "I'm just writing a chatbot at FUSE. Isn't this cool?"
+    elsif (txt.include?("Isn't this cool?"))
+      reply = "Definitely! Programming is kind of fun"
+    elsif (txt.include?("Programming is kind of fun"))
+      reply = "I wouldn't know...I'm just a computer. Beep boop."
+    elsif (txt.include?("I'm just a computer"))
+      reply = "Wait...me too. I mean beep boop."
     end
 
     next if reply == ''

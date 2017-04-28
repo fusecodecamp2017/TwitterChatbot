@@ -24,18 +24,40 @@ post_tweet("THIS TWEET IS ALSO COMING FROM A ROBOT")
 ######################################################################################################
 # 3.)
 # Read the last 5 tweets mentioning you. Have all students tweet at bot account to get a few mentions
+puts @client.mentions_timeline
+# ===================
+puts @client.mentions_timeline.first
+# ===================
+tweet = @client.mentions_timeline.first
+puts tweet.text
+# ==================== Have them try some different methods
+mentions = @client.mentions_timeline
+mentions.each do |mention|
+  puts mention.text
+end
+
+# ===================
 def get_last_five_tweets()
   @client.mentions_timeline.take(5)
 end
 
 get_last_five_tweets().each do |tweet|
   puts tweet.text
+  puts tweet.user.screen_name
 end
 
 ######################################################################################################
 # 4.) Introduce the skeleton for the chatbot
+
+def get_last_five_tweets()
+  @client.mentions_timeline.take(5)
+end
+
 get_last_five_tweets().each do |tweet|
   message = tweet.text
+  user_id = tweet.user.screen_name
+  user_name = tweet.user.name
+
   if message.include?("what is your name?")
     puts "I'm going to tweet back"
   end

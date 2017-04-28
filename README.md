@@ -31,3 +31,16 @@ Some interesting sites for ruby beginners:
 https://hackhands.com/beginners-guide-ruby/
 https://rubymonk.com/
 http://ruby-for-beginners.rubymonstas.org
+
+Windows extra steps:
+* need rubygems-updater
+  * download from https://rubygems.org/pages/download
+  * gem install --local rubygems.gem
+  * update_rubygems
+* install dev kit
+  * download from https://rubyinstaller.org/downloads/
+  * unzip
+  * ruby dk.rb init
+    * if it doesn't find ruby, add it to the config.yml
+  * ruby dk.rb install
+
