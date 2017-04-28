@@ -43,4 +43,12 @@ FOR SATURDAY
 * Posting the response and tagging them
 * Posting the response as a reply and tagging them
 * Saving the ID of that tweet and checking to see if we replied already
+##### If we're running low on time, move to Chattle bots
+* Error handling
+  * Ask the students how this could be broken:
+  * What if the text is in a different case?
+  * What if they ask it slightly differently?
+  * What if they misspell words?
+  * What if they ask a question you don't know how to respond to
 * Pair the students up and have them create chattle bots
+* Persistence
