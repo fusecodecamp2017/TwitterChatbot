@@ -43,4 +43,5 @@ Windows extra steps:
   * ruby dk.rb init
     * if it doesn't find ruby, add it to the config.yml
   * ruby dk.rb install
+  * or for osx xcode-select --install
 
