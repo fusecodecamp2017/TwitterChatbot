@@ -8,12 +8,16 @@ if x > 4
   puts "Second message"
 end
 
-y = 3
-if (x > 4) && (y > 4)
+if x == 5
   puts "Third message"
 end
 
-if (x > 4) || (y > 4)
+y = 3
+if (x > 4) && (y > 4)
   puts "Fourth message"
+end
+
+if (x > 4) || (y > 4)
+  puts "Fifth message"
 end
 

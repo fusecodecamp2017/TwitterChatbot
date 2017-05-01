@@ -31,3 +31,26 @@ Some interesting sites for ruby beginners:
 https://hackhands.com/beginners-guide-ruby/
 https://rubymonk.com/
 http://ruby-for-beginners.rubymonstas.org
+
+## Requirements
+* Ruby 2.0.0 or later installed
+* twitter gem installed (requires native compilation, see extra steps)
+* Twitter account and App created in Twitter Dev
+
+### Extra steps
+
+
+#### Windows extra steps:
+* install dev kit
+  * download from https://rubyinstaller.org/downloads/
+  * unzip
+  * ruby dk.rb init
+    * if it doesn't find ruby, add it to the config.yml
+  * ruby dk.rb install
+* need "certified" gem
+  * gem install certified
+  * require this gem in any twitter script
+
+
+#### OSX extra steps
+* xcode-select --install
