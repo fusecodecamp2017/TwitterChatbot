@@ -3,10 +3,10 @@ require 'twitter'
 @responded = []
 
 @client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = "7ZZkyiXVmhnElLWMuhzQKUOjA"
-  config.consumer_secret     = "j6tAB3W2TVHmP0fSupw3jITWMBOhQ0bUCPc4ZYP99HVCuNsCHG"
-  config.access_token        = "856935198499459073-pYelv9yh31hBrJeMFgiYmwe1JqHAscj"
-  config.access_token_secret = "OHTxxbZVLKFi7K8tP4X29sXfK6qhBtq2zUTw8XzqRBmVR"
+  config.consumer_key        = ""
+  config.consumer_secret     = ""
+  config.access_token        = ""
+  config.access_token_secret = ""
 end
 
 def post_tweet(message, opts={})

@@ -1,10 +1,10 @@
 require 'twitter'
 
 @client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = "7ZZkyiXVmhnElLWMuhzQKUOjA"
-  config.consumer_secret     = "j6tAB3W2TVHmP0fSupw3jITWMBOhQ0bUCPc4ZYP99HVCuNsCHG"
-  config.access_token        = "856935198499459073-pYelv9yh31hBrJeMFgiYmwe1JqHAscj"
-  config.access_token_secret = "OHTxxbZVLKFi7K8tP4X29sXfK6qhBtq2zUTw8XzqRBmVR"
+  config.consumer_key        = "" # fill in user 1's twitter credentials
+  config.consumer_secret     = ""
+  config.access_token        = ""
+  config.access_token_secret = ""
 end
 
 def post_tweet(message, opts={})
@@ -15,11 +15,8 @@ def get_last_x_mentions(num)
   @client.mentions_timeline.take(num)
 end
 
-def has_prompt?(tweet)
-  tweet.downcase.include?('what is') || tweet.include?('when is')
-end
-
 @responded = []
+# make sure this file is created beforehand
 File.open("tweets_responded_to.txt", "r").each_line do |line|
   @responded << line.chomp
 end
