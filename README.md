@@ -54,4 +54,3 @@ http://ruby-for-beginners.rubymonstas.org
 
 #### OSX extra steps
 * xcode-select --install
-
